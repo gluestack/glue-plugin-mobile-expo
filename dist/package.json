@@ -1,6 +1,6 @@
 {
-    "name": "glue-plugin-mobile-expo",
-    "version": "0.0.1",
+    "name": "@gluestack/glue-plugin-mobile-expo",
+    "version": "0.0.2",
     "description": "Gluestack Plugin for Mobile with Expo",
     "repository": {
         "type": "git",
@@ -21,7 +21,6 @@
         "@gluestack/helpers": "^0.0.12",
         "@types/node": "^18.14.6"
     },
-    "private": true,
     "main": "dist/src/index.js",
     "scripts": {
         "plugin-dev": "tsc --watch",
@@ -29,5 +28,8 @@
     },
     "devDependencies": {
         "typescript": "^4.9.5"
+    },
+    "peerDependencies": {
+        "@gluestack/glue-plugin-engine": "^0.0.x"
     }
 }
