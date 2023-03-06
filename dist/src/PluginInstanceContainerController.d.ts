@@ -14,7 +14,7 @@ export declare class PluginInstanceContainerController implements IContainerCont
         name: string;
     };
     getStatus(): "up" | "down";
-    getPortNumber(): number;
+    getPortNumber(returnDefault?: boolean): Promise<number>;
     getContainerId(): string;
     setStatus(status: "up" | "down"): "up" | "down";
     setPortNumber(portNumber: number): number;
