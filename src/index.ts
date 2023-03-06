@@ -1,8 +1,8 @@
 //@ts-ignore
 import packageJSON from "../package.json";
-import { Workspaces } from "@gluestack/helpers";
 import { PluginInstance } from "./PluginInstance";
 import IApp from "@gluestack/framework/types/app/interface/IApp";
+import { removeSpecialChars, Workspaces } from "@gluestack/helpers";
 import IPlugin from "@gluestack/framework/types/plugin/interface/IPlugin";
 import IInstance from "@gluestack/framework/types/plugin/interface/IInstance";
 import ILifeCycle from "@gluestack/framework/types/plugin/interface/ILifeCycle";
@@ -63,6 +63,10 @@ export class GlueStackPlugin implements IPlugin, IManagesInstances, ILifeCycle {
     if (!instance) {
       return;
     }
+
+    // rewrite router.js with the installed instance name
+    const routerFile = `${instance.getInstallationPath()}/router.js`;
+    await reWriteFile(routerFile, removeSpecialChars(instanceName), 'INSTANCENAME');
 
     // update package.json'S name index with the new instance name
     const pluginPackage = `${instance.getInstallationPath()}/package.json`;
