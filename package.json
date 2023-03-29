@@ -1,6 +1,6 @@
 {
   "name": "@gluestack/glue-plugin-mobile-expo",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Gluestack Plugin for Mobile with Expo",
   "repository": {
     "type": "git",
